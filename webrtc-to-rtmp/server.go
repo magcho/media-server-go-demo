@@ -110,7 +110,7 @@ func channel(c *gin.Context) {
 				outgoingStream.AttachTo(incomingStream)
 				answer.AddStream(outgoingStream.GetStreamInfo())
 
-				pusher, err := rtmppusher.NewRtmpPusher("rtmp://127.0.0.1/live/live")
+				pusher, err := rtmppusher.NewRtmpPusher("rtmp://rtmp/live/live")
 				if err != nil {
 					panic(err)
 				}
