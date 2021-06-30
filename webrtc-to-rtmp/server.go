@@ -121,7 +121,7 @@ func channel(c *gin.Context) {
 
 					videoTrack := incomingStream.GetVideoTracks()[0]
 
-					videoTrack.OnMediaFrame(func(frame []byte, timestamp uint) {
+					videoTrack.OnMediaFrame(func(frame []byte, timestamp uint64) {
 
 						fmt.Println("video frame ==========")
 						if len(frame) <= 4 {
@@ -136,7 +136,7 @@ func channel(c *gin.Context) {
 
 					audioTrack := incomingStream.GetAudioTracks()[0]
 
-					audioTrack.OnMediaFrame(func(frame []byte, timestamp uint){
+					audioTrack.OnMediaFrame(func(frame []byte, timestamp uint64){
 
 						fmt.Println("audio frame ===== ")
 						if len(frame) <= 4 {
